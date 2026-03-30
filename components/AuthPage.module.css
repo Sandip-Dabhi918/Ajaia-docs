@@ -1,0 +1,299 @@
+/* ── Auth page root ───────────────────────────────────────────────────────── */
+
+.root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  font-family: 'DM Sans', system-ui, sans-serif;
+}
+
+/* ── Loading spinner ─────────────────────────────────────────────────────── */
+
+.loading {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #f0ede8;
+}
+
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 3px solid #e7e5e4;
+  border-top-color: #c2410c;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Left branding panel ─────────────────────────────────────────────────── */
+
+.brandPanel {
+  width: 420px;
+  flex-shrink: 0;
+  background: #1c1917;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 40px;
+}
+
+.brandInner {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 4px;
+}
+
+.brandName {
+  font-family: 'Lora', Georgia, serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #fafaf9;
+  letter-spacing: -0.5px;
+}
+
+.brandTagline {
+  font-size: 15px;
+  color: #78716c;
+  line-height: 1.6;
+  max-width: 300px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13.5px;
+  color: #a8a29e;
+}
+
+.featureItem svg {
+  color: #4ade80;
+  flex-shrink: 0;
+}
+
+/* ── Right form panel ────────────────────────────────────────────────────── */
+
+.formPanel {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 24px;
+  background: #f0ede8;
+  overflow-y: auto;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14), 0 2px 8px rgba(0, 0, 0, 0.06);
+  padding: 36px;
+  width: 100%;
+  max-width: 420px;
+}
+
+/* ── Tabs ────────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  background: #f0ede8;
+  border-radius: 10px;
+  padding: 4px;
+  margin-bottom: 20px;
+}
+
+.tab {
+  flex: 1;
+  padding: 9px 0;
+  border: none;
+  background: transparent;
+  border-radius: 7px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #78716c;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, box-shadow 0.15s;
+}
+
+.tabActive {
+  background: #ffffff;
+  color: #1c1917;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* ── Notice banner ───────────────────────────────────────────────────────── */
+
+.notice {
+  font-size: 12px;
+  background: #fef3c7;
+  color: #92400e;
+  border-radius: 8px;
+  padding: 9px 13px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+/* ── Fields ──────────────────────────────────────────────────────────────── */
+
+.fields {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #78716c;
+}
+
+.input {
+  border: 1.5px solid #e7e5e4;
+  border-radius: 9px;
+  padding: 11px 14px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  color: #1c1917;
+  outline: none;
+  background: #f0ede8;
+  transition: border-color 0.15s, background 0.15s;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input:focus {
+  border-color: #c2410c;
+  background: #ffffff;
+}
+
+.input::placeholder {
+  color: #c0bbb8;
+}
+
+/* ── Error message ───────────────────────────────────────────────────────── */
+
+.error {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fef2f2;
+  color: #dc2626;
+  border-radius: 8px;
+  padding: 10px 13px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+/* ── Submit button ───────────────────────────────────────────────────────── */
+
+.submitBtn {
+  width: 100%;
+  background: #c2410c;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 13px 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.1s;
+  margin-bottom: 24px;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background: #9a3412;
+  transform: translateY(-1px);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: none;
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Demo / seed users ───────────────────────────────────────────────────── */
+
+.seedSection {
+  border-top: 1px solid #e7e5e4;
+  padding-top: 20px;
+}
+
+.seedLabel {
+  font-size: 11.5px;
+  color: #78716c;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.seedList {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.seedBtn {
+  flex: 1;
+  background: #f0ede8;
+  border: 1.5px solid #e7e5e4;
+  border-radius: 8px;
+  padding: 8px 4px;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  color: #1c1917;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  text-transform: capitalize;
+}
+
+.seedBtn:hover {
+  background: #fed7aa;
+  border-color: #c2410c;
+  color: #c2410c;
+}
+
+/* ── Responsive: hide branding on small screens ──────────────────────────── */
+
+@media (max-width: 700px) {
+  .brandPanel {
+    display: none;
+  }
+}
